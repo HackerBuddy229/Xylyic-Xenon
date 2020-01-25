@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Xylyic_Xenon.Models;
+using Xylyic_Xenon.Services;
 
 namespace Xylyic_Xenon.Controllers
 {
@@ -18,9 +20,27 @@ namespace Xylyic_Xenon.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(WordService wordService)
         {
-            return View(new IndexViewModel("test"));
+
+            var random = new Random();
+
+            var stringBuilder = new StringBuilder(wordService._Adjectives[random.Next(
+            maxValue: wordService._Adjectives.Count(),
+            minValue: 0
+            )]);
+            stringBuilder.Append(" ");
+            stringBuilder.Append(
+                wordService._Nounes[
+                    random.Next(
+                        maxValue:wordService._Nounes.Count(),
+                        minValue: 0
+                        
+                        )
+                ]
+
+            );
+            return View(new IndexViewModel(stringBuilder.ToString()));
         }
 
         public IActionResult About()
