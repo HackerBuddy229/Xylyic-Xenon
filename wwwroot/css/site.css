@@ -91,3 +91,7 @@ body {
 #reload{
   margin-top: 30px;
 }
+
+.right{
+  float: right;
+}
