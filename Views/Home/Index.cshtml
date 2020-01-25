@@ -2,8 +2,15 @@
     ViewData["Title"] = "Home Page";
 }
 @model IndexViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h2 class="display-4">Your new Project name:</h2>
+    <h1 id="projName"><span class="capsule">[</span>@Model.projName<span class="capsule">]</span></h1>
+
+    <div id="reload">
+        <form asp-controller="Home" asp-action="Index" method="get">
+                <input class="btn btn-secondary" type="submit" value="Let´s try again"/>
+        </form>
+    </div>
 </div>

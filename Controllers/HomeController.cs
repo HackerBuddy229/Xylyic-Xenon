@@ -20,7 +20,7 @@ namespace Xylyic_Xenon.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(new IndexViewModel("test"));
         }
 
         public IActionResult About()
