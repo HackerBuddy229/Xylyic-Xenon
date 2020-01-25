@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/home/hackerbuddy/.dotnet/store/|arch|/|tfm|",
+      "/home/hackerbuddy/.nuget/packages"
+    ]
+  }
+}
