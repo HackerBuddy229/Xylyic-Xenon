@@ -9,7 +9,7 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+  color: #2a628f;
 }
 
 .btn-primary {
@@ -64,7 +64,7 @@ body {
   background-image: Url(/img/backgroundStars.jpg);
   background-size: cover;
   background-position: center;
-  color: #fff;
+  color: #2a8f8a;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .footer {
@@ -77,7 +77,7 @@ body {
 }
 
 .mainBody{
-  margin-top: 50px;
+  margin-top: 150px;
 }
 
 #projName{
@@ -95,3 +95,9 @@ body {
 .right{
   float: right;
 }
+.btn-color-secondary{
+  color: #fff;
+  background-color: #f71735;
+}
+
+ 

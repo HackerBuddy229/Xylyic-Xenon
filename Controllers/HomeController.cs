@@ -25,12 +25,14 @@ namespace Xylyic_Xenon.Controllers
 
             var random = new Random();
 
-            var stringBuilder = new StringBuilder(wordService._Adjectives[random.Next(
+            var stringBuilder = new StringBuilder(WordFormattingService.ChangeFirstLetterToCap(
+                wordService._Adjectives[random.Next(
             maxValue: wordService._Adjectives.Count(),
             minValue: 0
-            )]);
+            )]
+            ));
             stringBuilder.Append(" ");
-            stringBuilder.Append(
+            stringBuilder.Append(WordFormattingService.ChangeFirstLetterToCap(
                 wordService._Nounes[
                     random.Next(
                         maxValue:wordService._Nounes.Count(),
@@ -38,6 +40,8 @@ namespace Xylyic_Xenon.Controllers
                         
                         )
                 ]
+            )
+                
 
             );
             return View(new IndexViewModel(stringBuilder.ToString()));
