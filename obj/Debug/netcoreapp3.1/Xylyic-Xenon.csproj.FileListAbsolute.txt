@@ -33,3 +33,5 @@
 /home/hackerbuddy/repos/Xylyic-Xenon/obj/Debug/netcoreapp3.1/Xylyic-Xenon.pdb
 /home/hackerbuddy/repos/Xylyic-Xenon/obj/Debug/netcoreapp3.1/Xylyic-Xenon.csproj.CopyComplete
 /home/hackerbuddy/repos/Xylyic-Xenon/obj/Debug/netcoreapp3.1/Razor/Views/Home/About.cshtml.g.cs
+/home/hackerbuddy/repos/Xylyic-Xenon/obj/Debug/netcoreapp3.1/Razor/Views/Home/Ai.cshtml.g.cs
+/home/hackerbuddy/repos/Xylyic-Xenon/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Empty.cshtml.g.cs
