@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Xylyic_Xenon.Models;
@@ -20,10 +21,17 @@ namespace Xylyic_Xenon.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index(WordService wordService)
+        public IActionResult Index(WordService wordService, BackgroundService backgroundService)
         {
 
+            var cok = HttpContext.Request.Cookies;
             var random = new Random();
+            if (cok["backIndex"] == null){
+                HttpContext.Response.Cookies.Append("backIndex",
+                 random.Next(backgroundService.backgrounds.Count()-1).ToString());
+            }
+
+            
 
             var stringBuilder = new StringBuilder(WordFormattingService.ChangeFirstLetterToCap(
                 wordService._Adjectives[random.Next(
@@ -46,12 +54,26 @@ namespace Xylyic_Xenon.Controllers
                 
 
             );
-            return View(new IndexViewModel(stringBuilder.ToString()));
+            var cookie = HttpContext.Request.Cookies;
+            var value = cookie["backIndex"];
+
+            return View(new IndexViewModel(stringBuilder.ToString(),
+             backgroundService.BackgroundSelect(value)));
         }
 
-        public IActionResult Ai(WordService wordService){
+        public IActionResult Ai(WordService wordService, BackgroundService backgroundService){
 
+
+            var cok = HttpContext.Request.Cookies;
             var random = new Random();
+            if (cok["backIndex"] == null){
+                HttpContext.Response.Cookies.Append("backIndex",
+                 random.Next(backgroundService.backgrounds.Count()-1).ToString());
+            }
+
+
+            
+        
 
             var stringBuilder = new StringBuilder(WordFormattingService.ChangeFirstLetterToCap(
                 wordService._Adjectives[random.Next(
@@ -74,12 +96,16 @@ namespace Xylyic_Xenon.Controllers
                 
 
             );
+            var cookie = HttpContext.Request.Cookies;
+            var value = cookie["backIndex"];
 
-            return View(new IndexViewModel(stringBuilder.ToString()));
+            return View(new IndexViewModel(stringBuilder.ToString(),
+            backgroundService.BackgroundSelect(value)));
         }
 
         public IActionResult About()
         {
+            
             return View();
         }
 

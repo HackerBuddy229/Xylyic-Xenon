@@ -26,6 +26,7 @@ namespace Xylyic_Xenon
         {
             services.AddControllersWithViews();
             services.AddSingleton<WordService>();
+            services.AddSingleton<Xylyic_Xenon.Services.BackgroundService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
