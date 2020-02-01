@@ -26,7 +26,7 @@ namespace Xylyic_Xenon.Services{
         public BackgroundModel BackgroundSelect(string index){
                 if (index == null){
                     var random = new Random();
-                    return (backgrounds[random.Next(1 , backgrounds.Length-1)]);
+                    return (backgrounds[random.Next(backgrounds.Length)]);
 
                 }
                 var background = backgrounds[Convert.ToInt32(index)];
