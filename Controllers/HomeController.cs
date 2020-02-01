@@ -53,7 +53,7 @@ namespace Xylyic_Xenon.Controllers
             var cok = HttpContext.Request.Cookies;
             
             if (cok["backIndex"] == null){
-                var newValue = random.Next(1 , backgroundService.backgrounds.Count()-1).ToString();
+                var newValue = random.Next(backgroundService.backgrounds.Count()).ToString();
                 HttpContext.Response.Cookies.Append("backIndex",
                 newValue
                  );
@@ -76,7 +76,7 @@ namespace Xylyic_Xenon.Controllers
             var random = new Random();
             if (cok["backIndex"] == null){
                 HttpContext.Response.Cookies.Append("backIndex",
-                 random.Next(1 , backgroundService.backgrounds.Count()-1).ToString());
+                 random.Next(backgroundService.backgrounds.Count()).ToString());
             }
 
 
