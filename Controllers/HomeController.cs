@@ -23,13 +23,8 @@ namespace Xylyic_Xenon.Controllers
 
         public IActionResult Index(WordService wordService, BackgroundService backgroundService)
         {
-
-            var cok = HttpContext.Request.Cookies;
-            var random = new Random();
-            if (cok["backIndex"] == null){
-                HttpContext.Response.Cookies.Append("backIndex",
-                 random.Next(backgroundService.backgrounds.Count()-1).ToString());
-            }
+                var random = new Random();
+            
 
             
 
@@ -54,6 +49,19 @@ namespace Xylyic_Xenon.Controllers
                 
 
             );
+
+            var cok = HttpContext.Request.Cookies;
+            
+            if (cok["backIndex"] == null){
+                var newValue = random.Next(1 , backgroundService.backgrounds.Count()-1).ToString();
+                HttpContext.Response.Cookies.Append("backIndex",
+                newValue
+                 );
+                 
+                 return View(new IndexViewModel(stringBuilder.ToString(),
+             backgroundService.BackgroundSelect(newValue)));
+            }
+
             var cookie = HttpContext.Request.Cookies;
             var value = cookie["backIndex"];
 
@@ -68,7 +76,7 @@ namespace Xylyic_Xenon.Controllers
             var random = new Random();
             if (cok["backIndex"] == null){
                 HttpContext.Response.Cookies.Append("backIndex",
-                 random.Next(backgroundService.backgrounds.Count()-1).ToString());
+                 random.Next(1 , backgroundService.backgrounds.Count()-1).ToString());
             }
 
 

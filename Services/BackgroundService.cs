@@ -16,9 +16,9 @@ namespace Xylyic_Xenon.Services{
         {
             backgrounds = new BackgroundModel[]{
                 new BackgroundModel{FileLocation="/img/backgroundStars.jpg", Credit="Erwan Hesry - Unsplash"},
-                new BackgroundModel{FileLocation="/img/BackgroundRuins.jpg", Credit="Felix Tchverkin- Unsplash"},
+                new BackgroundModel{FileLocation="/img/BackgroundRuins.jpg", Credit="Felix Tchverkin - Unsplash"},
                 new BackgroundModel{FileLocation="/img/backgroundBridge.jpg", Credit="Nicolas Häns - Unsplash"},
-                new BackgroundModel{FileLocation="BackgroundMountain.jpg", Credit="Jonny James - Unsplash"}
+                new BackgroundModel{FileLocation="/img/BackgroundMountain.jpg", Credit="Jonny James - Unsplash"}
             };
         }
 
@@ -26,7 +26,7 @@ namespace Xylyic_Xenon.Services{
         public BackgroundModel BackgroundSelect(string index){
                 if (index == null){
                     var random = new Random();
-                    return (backgrounds[random.Next(backgrounds.Length-1)]);
+                    return (backgrounds[random.Next(1 , backgrounds.Length-1)]);
 
                 }
                 var background = backgrounds[Convert.ToInt32(index)];
