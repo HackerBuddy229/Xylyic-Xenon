@@ -10,11 +10,11 @@
         "projectUniqueName": "/home/hackerbuddy/repos/Xylyic-Xenon/Xylyic-Xenon.csproj",
         "projectName": "Xylyic-Xenon",
         "projectPath": "/home/hackerbuddy/repos/Xylyic-Xenon/Xylyic-Xenon.csproj",
-        "packagesPath": "/home/hackerbuddy/.nuget/packages/",
+        "packagesPath": "/root/.nuget/packages/",
         "outputPath": "/home/hackerbuddy/repos/Xylyic-Xenon/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/hackerbuddy/.nuget/NuGet/NuGet.Config"
+          "/root/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
